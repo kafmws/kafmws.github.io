@@ -1,0 +1,782 @@
+<!DOCTYPE html><html><head>
+      <title>&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;&#xFF1A;&#x4F20;&#x8F93;&#x5C42;</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <div class="code-chunk" data-id="code-chunk-id-0" data-cmd="toc"><div class="input-div"><div class="btn-group"><div class="run-btn btn"><span>&#x25B6;&#xFE0E;</span></div><div class="run-all-btn btn">all</div></div><div class="status">running...</div></div><div class="output-div"></div></div><ul>
+<li><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%B1%82">&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;&#xFF1A;&#x4F20;&#x8F93;&#x5C42;</a>
+<ul>
+<li><a href="#%E4%BC%A0%E8%BE%93%E5%B1%82%E6%A6%82%E8%BF%B0">&#x4F20;&#x8F93;&#x5C42;&#x6982;&#x8FF0;</a>
+<ul>
+<li><a href="#%E4%BC%A0%E8%BE%93%E5%B1%82%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%90%86%E8%AE%BA%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%9C%BA%E5%88%B6">&#x4F20;&#x8F93;&#x5C42;&#x7684;&#x57FA;&#x672C;&#x7406;&#x8BBA;&#x548C;&#x57FA;&#x672C;&#x673A;&#x5236;</a></li>
+<li><a href="#%E4%BC%A0%E8%BE%93%E5%B1%82%E6%9C%8D%E5%8A%A1%E6%A6%82%E8%BF%B0">&#x4F20;&#x8F93;&#x5C42;&#x670D;&#x52A1;&#x6982;&#x8FF0;</a></li>
+<li><a href="#internet-%E7%9A%84%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE">Internet &#x7684;&#x4F20;&#x8F93;&#x5C42;&#x534F;&#x8BAE;</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%92%8C%E5%A4%9A%E8%B7%AF%E5%88%86%E7%94%A8">&#x591A;&#x8DEF;&#x590D;&#x7528;&#x548C;&#x591A;&#x8DEF;&#x5206;&#x7528;</a></li>
+<li><a href="#udp-user-datagram-protocol">UDP (User Datagram Protocol)</a>
+<ul>
+<li><a href="#udp-%E7%9A%84%E7%89%B9%E7%82%B9">UDP &#x7684;&#x7279;&#x70B9;</a></li>
+<li><a href="#udp-%E7%9A%84%E4%BB%B7%E5%80%BC">UDP &#x7684;&#x4EF7;&#x503C;</a></li>
+<li><a href="#udp-%E6%AE%B5%E6%A0%BC%E5%BC%8F">UDP &#x6BB5;&#x683C;&#x5F0F;</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%AF%E9%9D%A0%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%8E%9F%E7%90%86">&#x53EF;&#x9760;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x539F;&#x7406;</a>
+<ul>
+<li><a href="#rdt-10">RDT 1.0</a></li>
+<li><a href="#rdt-20">RDT 2.0</a></li>
+<li><a href="#rdt-21">RDT 2.1</a></li>
+<li><a href="#rdt-22">RDT 2.2</a></li>
+<li><a href="#rdt-30">RDT 3.0</a></li>
+</ul>
+</li>
+<li><a href="#%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E5%8D%8F%E8%AE%AE">&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x534F;&#x8BAE;</a>
+<ul>
+<li><a href="#gbn-protocolgo-back-n-protocol">GBN Protocol&#xFF0C;Go-Back-N Protocol</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 class="mume-header" id="%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%B1%82">&#x8BA1;&#x7B97;&#x673A;&#x7F51;&#x7EDC;&#xFF1A;&#x4F20;&#x8F93;&#x5C42;</h1>
+
+<h2 class="mume-header" id="%E4%BC%A0%E8%BE%93%E5%B1%82%E6%A6%82%E8%BF%B0">&#x4F20;&#x8F93;&#x5C42;&#x6982;&#x8FF0;</h2>
+
+<h4 class="mume-header" id="%E4%BC%A0%E8%BE%93%E5%B1%82%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%90%86%E8%AE%BA%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%9C%BA%E5%88%B6">&#x4F20;&#x8F93;&#x5C42;&#x7684;&#x57FA;&#x672C;&#x7406;&#x8BBA;&#x548C;&#x57FA;&#x672C;&#x673A;&#x5236;</h4>
+
+<ul>
+<li>&#x591A;&#x8DEF;&#x590D;&#x7528;/&#x5206;&#x7528;</li>
+<li>&#x6570;&#x636E;&#x4F20;&#x8F93;</li>
+<li>&#x6D41;&#x91CF;&#x63A7;&#x5236;</li>
+<li>&#x62E5;&#x585E;&#x63A7;&#x5236;</li>
+</ul>
+<h4 class="mume-header" id="%E4%BC%A0%E8%BE%93%E5%B1%82%E6%9C%8D%E5%8A%A1%E6%A6%82%E8%BF%B0">&#x4F20;&#x8F93;&#x5C42;&#x670D;&#x52A1;&#x6982;&#x8FF0;</h4>
+
+<p>&#x81EA;&#x4E0B;&#x800C;&#x4E0A;&#x770B;&#xFF0C;&#x4F20;&#x8F93;&#x5C42;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x7AEF;&#x5230;&#x7AEF;&#xFF08;end to end&#xFF09;&#x5C42;&#xFF0C;&#x4E3A;&#x4E24;&#x4E2A;&#x8FDB;&#x7A0B;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x903B;&#x8F91;&#x901A;&#x4FE1;&#x673A;&#x5236;&#x3002;<br>
+&#x5728;&#x4F20;&#x8F93;&#x5C42;&#xFF0C;</p>
+<ul>
+<li>&#x53D1;&#x9001;&#x65B9;&#x5C06;&#x5E94;&#x7528;&#x5C42;&#x4F20;&#x9012;&#x6765;&#x7684;&#x6D88;&#x606F;&#x5206;&#x6210;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;<code>segment</code>&#xFF0C;&#x5E76;&#x5411;&#x4E0B;&#x4F20;&#x9012;&#x7ED9;&#x7F51;&#x7EDC;&#x5C42;</li>
+<li>&#x63A5;&#x6536;&#x65B9;&#x5C06;&#x7F51;&#x7EDC;&#x5C42;&#x63D0;&#x4EA4;&#x7684;<code>segment</code>&#x7EC4;&#x88C5;&#x6210;&#x6D88;&#x606F;&#xFF0C;&#x63D0;&#x4EA4;&#x7ED9;&#x5E94;&#x7528;&#x5C42;</li>
+</ul>
+<h4 class="mume-header" id="internet-%E7%9A%84%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE">Internet &#x7684;&#x4F20;&#x8F93;&#x5C42;&#x534F;&#x8BAE;</h4>
+
+<p>TCP&#xFF1A;&#x53EF;&#x9760;&#x3001;&#x6309;&#x5E8F;&#x7684;&#x4EA4;&#x4ED8;&#x670D;&#x52A1;</p>
+<ul>
+<li>&#x9762;&#x5411;&#x8FDE;&#x63A5;</li>
+<li>&#x62E5;&#x585E;&#x63A7;&#x5236;</li>
+<li>&#x6D41;&#x91CF;&#x63A7;&#x5236;</li>
+</ul>
+<p>UDP&#xFF1A;&#x4E0D;&#x53EF;&#x9760;&#x7684;&#x4EA4;&#x4ED8;&#x670D;&#x52A1;<br>
+&#x57FA;&#x4E8E;&#x5C3D;&#x529B;&#x800C;&#x4E3A;<code>(best-effort)</code>&#x7684;&#x7F51;&#x7EDC;&#x5C42;&#xFF0C;&#x4E0D;&#x4FDD;&#x8BC1;&#x53EF;&#x9760;&#x4F20;&#x8F93;</p>
+<p>&#x5747;&#x4E0D;&#x63D0;&#x4F9B;<strong>&#x5EF6;&#x8FDF;</strong>&#x53CA;<strong>&#x5E26;&#x5BBD;</strong>&#x65B9;&#x9762;&#x7684;&#x4FDD;&#x969C;</p>
+<h2 class="mume-header" id="%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%92%8C%E5%A4%9A%E8%B7%AF%E5%88%86%E7%94%A8">&#x591A;&#x8DEF;&#x590D;&#x7528;&#x548C;&#x591A;&#x8DEF;&#x5206;&#x7528;</h2>
+
+<p>&#x5BF9;&#x7279;&#x5B9A;&#x573A;&#x666F;&#x6765;&#x8BF4;&#xFF0C;&#x534F;&#x8BAE;&#x662F;&#x552F;&#x4E00;&#x7684;&#xFF0C;&#x800C;&#x4E3B;&#x673A;&#x901A;&#x5E38;&#x8981;&#x4E3A;&#x591A;&#x4E2A;&#x8FDB;&#x7A0B;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#xFF0C;</p>
+<ul>
+<li>&#x53D1;&#x9001;&#x7AEF;&#x591A;&#x4E2A;<code>socket</code>&#x5171;&#x7528;&#x4F20;&#x8F93;&#x5C42;&#x670D;&#x52A1;&#x79F0;&#x4E3A;&#x4F20;&#x8F93;&#x5C42;&#x670D;&#x52A1;&#x7684;&#x591A;&#x8DEF;&#x590D;&#x7528;<br>
+&#xFF08;socket &#x5904;&#x4E8E;&#x5E94;&#x7528;&#x5C42;&#x4E0E;&#x4F20;&#x8F93;&#x5C42;&#x4E4B;&#x95F4;&#xFF09;</li>
+<li>&#x63A5;&#x6536;&#x7AEF;&#x4F20;&#x8F93;&#x5C42;<strong>&#x6839;&#x636E;<code>IP</code>&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;&#x53F7;</strong>&#x4FE1;&#x606F;&#xFF0C;&#x5C06;&#x6D88;&#x606F;&#x4F20;&#x9012;&#x7ED9;&#x6B63;&#x786E;&#x7684;socket &#x63A5;&#x6536;&#xFF0C;&#x79F0;&#x4E3A;&#x4F20;&#x8F93;&#x5C42;&#x670D;&#x52A1;&#x7684;&#x591A;&#x8DEF;&#x5206;&#x7528;<br>
+&#xFF08;&#x4E00;&#x53F0;&#x4E3B;&#x673A;&#x4E0A;&#x53EF;&#x80FD;&#x6709;&#x591A;&#x4E2A;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x5361;&#xFF0C;&#x7F51;&#x7EDC;&#x9002;&#x914D;&#x5668;&#xFF0C;&#x5373;&#x53EF;&#x62E5;&#x6709;&#x591A;&#x4E2A; IP &#x5730;&#x5740;&#xFF09;</li>
+</ul>
+<p>TCP &#x7684;&#x591A;&#x8DEF;&#x5206;&#x7528;&#x4E2D;&#xFF0C;socket &#x4EE5;&#x56DB;&#x5143;&#x7EC4;&#xFF08;&#x6E90;IP&#xFF0C;&#x6E90;&#x7AEF;&#x53E3;&#x53F7;&#xFF0C;&#x76EE;&#x7684;IP&#xFF0C;&#x76EE;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#xFF09;&#x6765;&#x6807;&#x8BC6;<br>
+&#xFF08;TCP &#x4E3A;&#x6BCF;&#x4E2A;&#x5BA2;&#x6237;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x8FDE;&#x63A5;&#xFF0C;&#x6BCF;&#x4E2A;&#x5BA2;&#x6237;&#x6709;&#x72EC;&#x7ACB;&#x7684; socket&#xFF09;<br>
+&#xFF08;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7ED9; &#x4E0E;&#x53D1;&#x9001;&#x6570;&#x636E;&#x7684; socket &#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x7684;&#x53E6;&#x4E00;&#x4E2A; socket&#xFF09;<br>
+<img src="https://cdn.jsdelivr.net/gh/kafmws/pictures/notes/TCP_&#x591A;&#x8DEF;&#x5206;&#x7528;&#x793A;&#x610F;&#x56FE;.png" alt="TCP_&#x591A;&#x8DEF;&#x5206;&#x7528;&#x793A;&#x610F;&#x56FE;" width="50%"></p>
+<p>UDP &#x7684;&#x591A;&#x8DEF;&#x5206;&#x7528;&#x4E2D;&#xFF0C;socket &#x4EE5;&#x4E8C;&#x5143;&#x7EC4;&#xFF08;&#x76EE;&#x7684;IP&#xFF0C;&#x76EE;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#xFF09;&#x6765;&#x6807;&#x8BC6;&#x3002;<br>
+&#xFF08;&#x4E0D;&#x540C;&#x6E90; IP &#x5730;&#x5740;&#xFF0C;&#x4E0D;&#x540C;&#x6E90;&#x7AEF;&#x53E3;&#x53F7;&#x7684; IP&#x6570;&#x636E;&#x5305; &#x4EA4;&#x7ED9;&#x540C;&#x4E00;&#x4E2A; socket&#xFF09;<br>
+<img src="https://cdn.jsdelivr.net/gh/kafmws/pictures/notes/UDP_&#x591A;&#x8DEF;&#x5206;&#x7528;&#x793A;&#x610F;&#x56FE;.png" alt="UDP_&#x591A;&#x8DEF;&#x5206;&#x7528;&#x793A;&#x610F;&#x56FE;" width="50%"></p>
+<p><strong>&#x5C0F;&#x7ED3;&#x56DB;&#x95EE;</strong>&#xFF1A;<br>
+&#x4EC0;&#x4E48;&#x662F; / &#x4E3A;&#x4EC0;&#x4E48; / &#x600E;&#x4E48;&#x505A; &#x591A;&#x8DEF;&#x590D;&#x7528;&#x548C;&#x591A;&#x8DEF;&#x5206;&#x7528;&#xFF1F;<br>
+Internet &#x4E2D; TCP &#x548C; UDP &#x662F;&#x600E;&#x4E48;&#x505A;&#x590D;&#x7528;&#x548C;&#x591A;&#x8DEF;&#x5206;&#x7528;&#x7684;&#xFF1F;</p>
+<h2 class="mume-header" id="udp-user-datagram-protocol">UDP (User Datagram Protocol)</h2>
+
+<h4 class="mume-header" id="udp-%E7%9A%84%E7%89%B9%E7%82%B9">UDP &#x7684;&#x7279;&#x70B9;</h4>
+
+<p>UDP &#xFF0C;&#x7528;&#x6237;&#x6570;&#x636E;&#x62A5;&#x534F;&#x8BAE;&#x3002;&#x662F;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x7684;&#x534F;&#x8BAE;&#xFF0C;&#x57FA;&#x4E8E;&#x7F51;&#x7EDC;&#x5C42; IP &#x534F;&#x8BAE;&#x4EC5;&#x5B9E;&#x73B0;&#x4E86;</p>
+<ul>
+<li>&#x590D;&#x7528;/&#x5206;&#x7528;</li>
+<li>&#x7B80;&#x5355;&#x7684;&#x9519;&#x8BEF;&#x6821;&#x9A8C;</li>
+</ul>
+<p>&#x76F8;&#x5F53;&#x4E8E;&#x5C06; IP &#x5C42;&#x670D;&#x52A1;&#x66B4;&#x9732;&#x7ED9;&#x5E94;&#x7528;&#x5C42;</p>
+<p>&#xFF08;&#x5728;&#x4F20;&#x8F93;&#x5C42;&#x8FDB;&#x884C;&#x9519;&#x8BEF;&#x6821;&#x9A8C;&#x57FA;&#x4E8E;&#x4EE5;&#x4E0B;&#x51E0;&#x70B9;&#x539F;&#x56E0;&#xFF1A;<br>
+1.&#x65E0;&#x6CD5;&#x4FDD;&#x8BC1;&#x4E0B;&#x5C42;&#x94FE;&#x8DEF;&#x8FDB;&#x884C;&#x4E86;&#x9519;&#x8BEF;&#x6821;&#x9A8C;<br>
+2.&#x4F20;&#x8F93;&#x5C42;&#x662F;&#x63A5;&#x6536;&#x6570;&#x636E;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x7AEF;&#x5230;&#x7AEF;&#x5C42;&#xFF0C;&#x57FA;&#x4E8E;&#x7AEF;&#x5230;&#x7AEF;&#x539F;&#x5219;&#xFF0C;&#x5E94;&#x5BF9;&#x53E6;&#x4E00;&#x7AEF;&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6821;&#x9A8C;&#xFF09;</p>
+<ul>
+<li>
+<p>best effort<br>
+UDP segment &#x53EF;&#x80FD;&#x4E22;&#x5931;<br>
+&#x53EF;&#x80FD;&#x975E;&#x6309;&#x5E8F;&#x5230;&#x8FBE;</p>
+</li>
+<li>
+<p>&#x65E0;&#x8FDE;&#x63A5;&#x670D;&#x52A1;<br>
+&#x65E0;&#x9700;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;<br>
+&#x6BCF;&#x4E2A; UDP&#x6BB5; &#x7684;&#x5904;&#x7406;&#x72EC;&#x7ACB;&#x4E8E;&#x5176;&#x4ED6;&#x6BB5;</p>
+</li>
+</ul>
+<h4 class="mume-header" id="udp-%E7%9A%84%E4%BB%B7%E5%80%BC">UDP &#x7684;&#x4EF7;&#x503C;</h4>
+
+<p>UDP &#x5728; IP &#x7684;&#x57FA;&#x7840;&#x4E0A;&#x5B9E;&#x73B0;&#xFF0C;&#x5E76;&#x672A;&#x63D0;&#x4F9B;&#x592A;&#x591A;&#x670D;&#x52A1;&#xFF0C;&#x56E0;&#x6B64; <strong>UDP &#x7684;&#x4EF7;&#x503C;</strong>&#x4E3B;&#x8981;&#x5728;&#x4E8E;&#xFF1A;</p>
+<ul>
+<li>&#x65E0;&#x9700;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;(&#x5EF6;&#x8FDF;&#x5C0F;)&#xFF1B;</li>
+<li>&#x5B9E;&#x73B0;&#x7B80;&#x5355;&#xFF1B;</li>
+<li>&#x5934;&#x90E8;&#x5F00;&#x9500;&#x5C0F;(8&#x5B57;&#x8282;)&#xFF1B;</li>
+<li>&#x65E0;&#x62E5;&#x585E;&#x63A7;&#x5236;&#xFF08;&#x5E94;&#x7528;&#x5C42;&#x53EF;&#x4EE5;&#x66F4;&#x597D;&#x5730;&#x63A7;&#x5236;&#x53D1;&#x9001;&#x901F;&#x7387;&#x548C;&#x53D1;&#x9001;&#x65F6;&#x95F4;&#xFF09;</li>
+</ul>
+<p>&#x7531;&#x4E8E;&#x4EE5;&#x4E0A;&#x7279;&#x70B9;&#xFF0C;UDP &#x9002;&#x5408;&#x7528;&#x4E8E;&#x6D41;&#x5A92;&#x4F53;&#x5E94;&#x7528;&#xFF08;<strong>&#x5BB9;&#x5FCD;&#x4E22;&#x5931;</strong>&#xFF0C;<strong>&#x901F;&#x7387;&#x654F;&#x611F;</strong>&#xFF09;<br>
+UDP &#x4E5F;&#x7528;&#x4E8E; DNS&#xFF0C;SNMP &#x7B49;&#x534F;&#x8BAE;</p>
+<p>&#x6B64;&#x5916;&#xFF0C;&#x4F7F;&#x7528; UDP &#x7684;&#x5E94;&#x7528;&#x53EF;&#x4EE5;&#x5728;&#x5E94;&#x7528;&#x5C42;&#x589E;&#x52A0;&#x53EF;&#x9760;&#x6027;&#x673A;&#x5236;&#x3001;&#x6216; &#x7279;&#x5B9A;&#x7684;&#x9519;&#x8BEF;&#x6062;&#x590D;&#x673A;&#x5236;</p>
+<h4 class="mume-header" id="udp-%E6%AE%B5%E6%A0%BC%E5%BC%8F">UDP &#x6BB5;&#x683C;&#x5F0F;</h4>
+
+<p code_chunk_offset="1" cmd="true" args="[&quot;-E&quot;]" hide="true"><!--?xml version='1.0' encoding='UTF-8' standalone='no'?-->
+<svg xmlns="http://www.w3.org/2000/svg" width="330" height="238" shape-rendering="geometricPrecision" version="1.0">
+  <defs>
+    <filter id="f2" x="0" y="0" width="200%" height="200%">
+      <feOffset result="offOut" in="SourceGraphic" dx="5" dy="5"/>
+      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="3"/>
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+    </filter>
+  </defs>
+  <g stroke-width="1" stroke-linecap="square" stroke-linejoin="round">
+    <rect x="0" y="0" width="330" height="238" style="fill: #ffffff"/>
+    <path stroke="gray" fill="gray" filter="url(#f2)" d="M25.0 105.0 L25.0 189.0 L305.0 189.0 L305.0 105.0 z"/>
+    <path stroke="gray" fill="gray" filter="url(#f2)" d="M25.0 49.0 L25.0 77.0 L165.0 77.0 L165.0 49.0 z"/>
+    <path stroke="gray" fill="gray" filter="url(#f2)" d="M165.0 49.0 L165.0 77.0 L305.0 77.0 L305.0 49.0 z"/>
+    <path stroke="gray" fill="gray" filter="url(#f2)" d="M25.0 77.0 L25.0 105.0 L165.0 105.0 L165.0 77.0 z"/>
+    <path stroke="gray" fill="gray" filter="url(#f2)" d="M165.0 77.0 L165.0 105.0 L305.0 105.0 L305.0 77.0 z"/>
+    <path stroke="#000000" stroke-width="1.000000" stroke-linecap="round" stroke-linejoin="round" fill="white" d="M25.0 105.0 L25.0 189.0 L305.0 189.0 L305.0 105.0 z"/>
+    <path stroke="#000000" stroke-width="1.000000" stroke-linecap="round" stroke-linejoin="round" fill="white" d="M25.0 49.0 L25.0 77.0 L165.0 77.0 L165.0 49.0 z"/>
+    <path stroke="#000000" stroke-width="1.000000" stroke-linecap="round" stroke-linejoin="round" fill="white" d="M165.0 49.0 L165.0 77.0 L305.0 77.0 L305.0 49.0 z"/>
+    <path stroke="#000000" stroke-width="1.000000" stroke-linecap="round" stroke-linejoin="round" fill="white" d="M25.0 77.0 L25.0 105.0 L165.0 105.0 L165.0 77.0 z"/>
+    <path stroke="#000000" stroke-width="1.000000" stroke-linecap="round" stroke-linejoin="round" fill="white" d="M165.0 77.0 L165.0 105.0 L305.0 105.0 L305.0 77.0 z"/>
+    <text x="44" y="68" font-family="Courier" font-size="14" stroke="none" fill="#000000">source port</text>
+    <text x="68" y="96" font-family="Courier" font-size="14" stroke="none" fill="#000000">length</text>
+    <text x="95" y="152" font-family="Courier" font-size="14" stroke="none" fill="#000000">application data</text>
+    <text x="99" y="208" font-family="Courier" font-size="14" stroke="none" fill="#000000">UDP segment format</text>
+    <text x="111" y="40" font-family="Courier" font-size="14" stroke="none" fill="#000000">32 bits width</text>
+    <text x="203" y="68" font-family="Courier" font-size="14" stroke="none" fill="#000000">dest port</text>
+    <text x="205" y="96" font-family="Courier" font-size="14" stroke="none" fill="#000000">checksum</text>
+  </g>
+</svg></p><p>&#x5982;&#x56FE;&#x6240;&#x89C1;&#xFF0C;UDP &#x5934;&#x90E8;&#x6709;&#x56DB;&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;&#x5404;&#x5360; 2 &#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x5171;&#x5360; 8 &#x5B57;&#x8282;&#x3002;<br>
+&#x56DB;&#x4E2A;&#x5B57;&#x6BB5;&#x4F9D;&#x6B21;&#x4E3A;<strong>&#x6E90;&#x7AEF;&#x53E3;&#x53F7;</strong>&#x3001;<strong>&#x76EE;&#x7684;&#x7AEF;&#x53E3;&#x53F7;</strong>&#x3001;<strong>&#x6BB5;&#x957F;&#x5EA6;</strong>&#xFF08;&#x5305;&#x62EC;&#x5934;&#x90E8;&#xFF09;&#xFF0C;&#x548C;<strong>&#x6821;&#x9A8C;&#x548C;</strong>&#x3002;</p>
+<p><strong>&#x6821;&#x9A8C;&#x548C;</strong>&#xFF1A;</p>
+<ul>
+<li>&#x53D1;&#x9001;&#x65B9;&#x5C06;&#x6BB5;&#x7684;&#x5185;&#x5BB9;&#x89C6;&#x4E3A; 16-bit &#x7684;&#x6574;&#x6570;&#xFF0C;&#x6821;&#x9A8C;&#x548C;&#x5B57;&#x6BB5;&#x89C6;&#x4E3A; &#x5168;0&#xFF0C;&#x8BA1;&#x7B97;&#x6240;&#x6709;&#x6574;&#x6570;&#x7684;&#x548C;&#xFF0C;&#x8FDB;&#x4F4D;&#x52A0;&#x5728;&#x548C;&#x7684;&#x540E;&#x9762;<br>
+&#x5C06;&#x5F97;&#x5230;&#x7684;&#x503C;&#x6309;&#x4F4D;&#x6C42;&#x53CD;&#xFF0C;&#x5F97;&#x5230;&#x6821;&#x9A8C;&#x548C;&#xFF0C;&#x653E;&#x5165;&#x6821;&#x9A8C;&#x548C;&#x5B57;&#x6BB5;</li>
+<li>&#x63A5;&#x6536;&#x65B9;&#x8BA1;&#x7B97;&#x6536;&#x5230;&#x6BB5;&#x7684;&#x6821;&#x9A8C;&#x548C;&#xFF0C;&#x4E0E;&#x6821;&#x9A8C;&#x548C;&#x5B57;&#x6BB5;&#x76F8;&#x6BD4;&#x5BF9;<br>
+&#x82E5;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x5219;&#x4F20;&#x8F93;&#x4E2D;&#x51FA;&#x9519;<br>
+&#x82E5;&#x4E00;&#x81F4;&#xFF0C;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x672A;&#x51FA;&#x9519;<br>
+&#xFF08;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x7531;&#x4E8E;&#x4E8C;&#x8FDB;&#x5236;&#x7684;&#x7279;&#x6B8A;&#x6027;&#xFF0C;&#x5728;&#x6821;&#x9A8C;&#x8FC7;&#x7A0B;&#x4E2D;&#x63A5;&#x6536;&#x65B9;&#x53EA;&#x9700;&#x5C06;&#x6240;&#x6709;&#x6574;&#x6570;&#x6C42;&#x548C;&#xFF0C;<br>
+&#x5305;&#x62EC;&#x6821;&#x9A8C;&#x548C;&#x5B57;&#x6BB5;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x4E3A; &#x5168;1 &#x5373;&#x6821;&#x9A8C;&#x6210;&#x529F;&#x3002;(&#x539F;&#x7ED3;&#x679C;&#x53D6;&#x53CD;&#x7F6E;&#x4E3A;&#x6821;&#x9A8C;&#x548C;&#xFF0C;<br>
+&#x5219;&#x586B;&#x5145;&#x6821;&#x9A8C;&#x548C;&#x540E;&#x7684;&#x6BB5;&#x518D;&#x6B21;&#x8BA1;&#x7B97;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x672A;&#x586B;&#x5145;&#x6821;&#x9A8C;&#x548C;&#x7684;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x52A0;&#x4E0A;&#x8BE5;&#x7ED3;&#x679C;&#x53D6;&#x53CD;&#xFF0C;&#x5373; &#x5168;1)&#xFF09;</li>
+</ul>
+<h2 class="mume-header" id="%E5%8F%AF%E9%9D%A0%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%8E%9F%E7%90%86">&#x53EF;&#x9760;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x539F;&#x7406;</h2>
+
+<p>&#x53EF;&#x9760;&#x6570;&#x636E;&#x4F20;&#x8F93;&#xFF08;RDT&#xFF0C;reliable data transfer&#xFF09;&#x76EE;&#x7684;&#xFF1A;&#x5728;&#x4E0D;&#x53EF;&#x9760;&#x7684;&#x4FE1;&#x9053;&#x4E0A;&#x8FDB;&#x884C;&#x53EF;&#x9760;&#x7684;&#x6570;&#x636E;&#x4F20;&#x8F93;<br>
+&#x4EC0;&#x4E48;&#x662F;&#x53EF;&#x9760;&#xFF1F;<br>
+&#x4E0D;&#x9519;&#xFF08;&#x6570;&#x636E;&#x6B63;&#x786E;&#xFF09;&#xFF0C;&#x4E0D;&#x4E22;&#xFF08;&#x786E;&#x8BA4;&#x673A;&#x5236;&#x3001;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#xFF09;&#xFF0C;&#x4E0D;&#x4E71;&#xFF08;&#x8BC6;&#x522B;&#x5206;&#x7EC4;&#x987A;&#x5E8F;&#xFF09;<br>
+<img src="https://cdn.jsdelivr.net/gh/kafmws/pictures/notes/&#x53EF;&#x9760;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x7684;&#x57FA;&#x672C;&#x7ED3;&#x6784;.png" alt="&#x53EF;&#x9760;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x7684;&#x57FA;&#x672C;&#x7ED3;&#x6784;" width="60%"><br>
+&#x4E0A;&#x56FE;&#x4E2D;&#x5355;&#x5411;&#x7BAD;&#x5934;&#x8868;&#x793A;&#x7B80;&#x5355;&#x7684;&#x8C03;&#x7528;&#x5173;&#x7CFB;&#xFF0C;&#x5982;&#x5E94;&#x7528;&#x5C42;&#x8C03;&#x7528;<code>rdt_send()</code>&#x5411;&#x4F20;&#x8F93;&#x5C42;&#x53D1;&#x9001;&#x6570;&#x636E;<br>
+&#x53CC;&#x5411;&#x7BAD;&#x5934;&#x8868;&#x793A;&#x53CC;&#x65B9;&#x4E4B;&#x95F4;&#x5E76;&#x975E;&#x7B80;&#x5355;&#x7684;&#x5355;&#x5411;&#x6570;&#x636E;&#x6D41;&#x52A8;&#xFF0C;&#x8FD8;&#x6709;&#x53CC;&#x5411;&#x7684;&#x63A7;&#x5236;&#x6D88;&#x606F;&#x7684;&#x4F20;&#x9012;</p>
+<p><strong>&#x4E0B;&#x9762;&#x901A;&#x8FC7;&#x8BA8;&#x8BBA;&#x4E0D;&#x540C;&#x53EF;&#x9760;&#x7A0B;&#x5EA6;&#x4FE1;&#x9053;&#x4E0A;&#x7684;&#x53EF;&#x9760;&#x4F20;&#x8F93;&#x534F;&#x8BAE;&#x7684;&#x8BBE;&#x8BA1;&#x6765;&#x7406;&#x89E3;&#x53EF;&#x9760;&#x4F20;&#x8F93;&#x539F;&#x7406;</strong></p>
+<h4 class="mume-header" id="rdt-10">RDT 1.0</h4>
+
+<p>&#x5047;&#x8BBE;&#x5E95;&#x5C42;&#x4FE1;&#x9053;&#x5B8C;&#x5168;&#x53EF;&#x9760;&#xFF08;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x4E0D;&#x4F1A;&#x4E22;&#x5F03;&#x5206;&#x7EC4;&#xFF09;<br>
+&#x5219;&#x53EF;&#x9760;&#x4F20;&#x8F93;&#x534F;&#x8BAE;&#x7684;&#x72B6;&#x6001;&#x56FE;&#x8868;&#x793A;&#x5982;&#x4E0B;</p>
+<p engine="dot"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: RDT_1_0 Pages: 1 -->
+<svg width="478pt" height="168pt" viewBox="0.00 0.00 573.10 201.95" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(.8333 .8333) rotate(0) translate(4 197.95)">
+<title>RDT_1_0</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-197.95 569.1016,-197.95 569.1016,4 -4,4"/>
+<!-- N0 -->
+<g id="node1" class="node">
+<title>N0</title>
+<ellipse fill="none" stroke="#000000" cx="60.475" cy="-60.475" rx="60.4501" ry="60.4501"/>
+<text text-anchor="middle" x="60.475" y="-73.075" font-family="Times,serif" font-size="14.00" fill="#000000">wait for calling</text>
+<text text-anchor="middle" x="60.475" y="-56.275" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&#xA0;from above</text>
+<text text-anchor="middle" x="60.475" y="-39.475" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&#xA0;(sender)</text>
+</g>
+<!-- N0&#45;&gt;N0 -->
+<g id="edge1" class="edge">
+<title>N0-&gt;N0</title>
+<path fill="none" stroke="#000000" d="M119.3392,-74.4493C130.8067,-72.8265 138.95,-68.1684 138.95,-60.475 138.95,-55.306 135.274,-51.5072 129.3836,-49.0786"/>
+<polygon fill="#000000" stroke="#000000" points="129.8954,-45.5966 119.3392,-46.5008 128.1552,-52.3769 129.8954,-45.5966"/>
+<text text-anchor="middle" x="207.8209" y="-81.475" font-family="Times,serif" font-size="14.00" fill="#000000">rdt_send(data)</text>
+<text text-anchor="middle" x="207.8209" y="-64.675" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;</text>
+<text text-anchor="middle" x="207.8209" y="-47.875" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;packet = mkpkt(data);</text>
+<text text-anchor="middle" x="207.8209" y="-31.075" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;udt_send(data)</text>
+</g>
+<!-- N1 -->
+<g id="node2" class="node">
+<title>N1</title>
+<ellipse fill="none" stroke="#000000" cx="354.475" cy="-60.475" rx="60.4501" ry="60.4501"/>
+<text text-anchor="middle" x="354.475" y="-73.075" font-family="Times,serif" font-size="14.00" fill="#000000">wait for calling</text>
+<text text-anchor="middle" x="354.475" y="-56.275" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&#xA0;from below</text>
+<text text-anchor="middle" x="354.475" y="-39.475" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&#xA0;(receiver)</text>
+</g>
+<!-- N1&#45;&gt;N1 -->
+<g id="edge2" class="edge">
+<title>N1-&gt;N1</title>
+<path fill="none" stroke="#000000" d="M413.3392,-74.4493C424.8067,-72.8265 432.95,-68.1684 432.95,-60.475 432.95,-55.306 429.274,-51.5072 423.3836,-49.0786"/>
+<polygon fill="#000000" stroke="#000000" points="423.8954,-45.5966 413.3392,-46.5008 422.1552,-52.3769 423.8954,-45.5966"/>
+<text text-anchor="middle" x="499.0258" y="-81.475" font-family="Times,serif" font-size="14.00" fill="#000000">rdt_rcv(packet)</text>
+<text text-anchor="middle" x="499.0258" y="-64.675" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;</text>
+<text text-anchor="middle" x="499.0258" y="-47.875" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;extract(packet, data);</text>
+<text text-anchor="middle" x="499.0258" y="-31.075" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;deliver_data(data)</text>
+</g>
+<!-- N3 -->
+<!-- N3&#45;&gt;N0 -->
+<g id="edge3" class="edge">
+<title>N3-&gt;N0</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M60.475,-157.9071C60.475,-150.4216 60.475,-141.2108 60.475,-131.4676"/>
+<polygon fill="#000000" stroke="#000000" points="63.9751,-131.1715 60.475,-121.1716 56.9751,-131.1716 63.9751,-131.1715"/>
+</g>
+<!-- N4 -->
+<!-- N4&#45;&gt;N1 -->
+<g id="edge4" class="edge">
+<title>N4-&gt;N1</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M354.475,-157.9071C354.475,-150.4216 354.475,-141.2108 354.475,-131.4676"/>
+<polygon fill="#000000" stroke="#000000" points="357.9751,-131.1715 354.475,-121.1716 350.9751,-131.1716 357.9751,-131.1715"/>
+</g>
+</g>
+</svg>
+</p><h4 class="mume-header" id="rdt-20">RDT 2.0</h4>
+
+<p>&#x5047;&#x8BBE;&#x5E95;&#x5C42;&#x4FE1;&#x9053;&#x4EC5;&#x53EF;&#x80FD;&#x4EA7;&#x751F;&#x4F4D;&#x9519;&#x8BEF;&#xFF08;&#x4E0D;&#x4F1A;&#x4E22;&#x5F03;&#x5206;&#x7EC4;&#xFF09;<br>
+&#x53D1;&#x73B0;&#x9519;&#x8BEF;&#xFF1A;&#x901A;&#x8FC7;&#x6821;&#x9A8C;&#x548C;&#x68C0;&#x9A8C;<br>
+&#x5904;&#x7406;&#x9519;&#x8BEF;&#xFF1A;&#x5F53;&#x53D1;&#x9001;&#x65B9;&#x5F97;&#x77E5;&#x5206;&#x7EC4;&#x4F20;&#x8F93;&#x9519;&#x8BEF;&#x65F6;&#x91CD;&#x53D1;&#x76F8;&#x5E94;&#x5206;&#x7EC4;<br>
+&#x2460;&#x589E;&#x52A0;&#x786E;&#x8BA4;&#x673A;&#x5236;/&#x63A7;&#x5236;&#x6D88;&#x606F;(Acknowledgements&#xFF0C;ACK)&#xFF1A;&#x663E;&#x5F0F;&#x5730;&#x544A;&#x77E5;&#x53D1;&#x9001;&#x65B9;&#x5206;&#x7EC4;&#x5DF2;&#x6B63;&#x786E;&#x63A5;&#x6536;<br>
+&#x2461;NAK&#xFF1A;&#x663E;&#x5F0F;&#x5730;&#x544A;&#x77E5;&#x53D1;&#x9001;&#x65B9;&#x5206;&#x7EC4;&#x6709;&#x8BEF;</p>
+<p>&#x57FA;&#x4E8E;&#x8FD9;&#x79CD;&#x91CD;&#x4F20;&#x673A;&#x5236;&#x7684; RDT&#x534F;&#x8BAE; &#x79F0;&#x4E3A;<mark>ARQ&#xFF08;Automatic Repeat reQuest&#xFF09;&#x534F;&#x8BAE;</mark><br>
+&#x5F15;&#x5165;&#x7684;&#x65B0;&#x673A;&#x5236;&#xFF1A;&#x5DEE;&#x9519;&#x68C0;&#x6D4B;&#x3001;&#x63A5;&#x6536;&#x65B9;&#x53CD;&#x9988;&#x63A7;&#x5236;&#x6D88;&#x606F;&#xFF08;ACK/NAK&#xFF09;&#x3001;&#x91CD;&#x4F20;</p>
+<p>&#x82E5;&#x91C7;&#x7528; ACK + NAK &#x673A;&#x5236;&#xFF0C;&#x53D1;&#x9001;&#x65B9;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x540E;&#x7B49;&#x5F85;&#x63A5;&#x6536;&#x65B9;&#x7684;&#x54CD;&#x5E94;&#xFF0C;<br>
+&#x6536;&#x5230;&#x54CD;&#x5E94;&#x540E;&#x5224;&#x65AD;&#x91CD;&#x53D1;&#x5F53;&#x524D;&#x6D88;&#x606F;&#x8FD8;&#x662F;&#x53D1;&#x9001;&#x4E0B;&#x4E00;&#x6761;&#x6D88;&#x606F;&#xFF0C;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x540E;&#x8FDB;&#x5165;&#x4E00;&#x79CD;&#x505C;&#x6B62;-&#x7B49;&#x5F85;&#x7684;&#x72B6;&#x6001;<br>
+&#x5219;&#x8FD9;&#x79CD;&#x505C;-&#x7B49;&#xFF08;stop-and-wait&#xFF09;&#x534F;&#x8BAE;&#x7684;&#x72B6;&#x6001;&#x56FE;&#x8868;&#x793A;&#x5982;&#x4E0B;</p>
+<p engine="dot"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: RDT_2_0 Pages: 1 -->
+<svg width="690pt" height="337pt" viewBox="0.00 0.00 828.31 404.67" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(.8333 .8333) rotate(0) translate(4 400.6717)">
+<title>RDT_2_0</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-400.6717 824.3071,-400.6717 824.3071,4 -4,4"/>
+<!-- N0 -->
+<g id="node1" class="node">
+<title>N0</title>
+<ellipse fill="none" stroke="#000000" cx="127.4997" cy="-267.8642" rx="55.0092" ry="55.0092"/>
+<text text-anchor="middle" x="127.4997" y="-280.4642" font-family="Times,serif" font-size="14.00" fill="#000000">wait for</text>
+<text text-anchor="middle" x="127.4997" y="-263.6642" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;calling </text>
+<text text-anchor="middle" x="127.4997" y="-246.8642" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;from above</text>
+</g>
+<!-- N1 -->
+<g id="node2" class="node">
+<title>N1</title>
+<ellipse fill="none" stroke="#000000" cx="161.4997" cy="-54.4284" rx="54.3569" ry="54.3569"/>
+<text text-anchor="middle" x="161.4997" y="-58.6284" font-family="Times,serif" font-size="14.00" fill="#000000">wait for ACK</text>
+<text text-anchor="middle" x="161.4997" y="-41.8284" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;or NAK</text>
+</g>
+<!-- N0&#45;&gt;N1 -->
+<g id="edge1" class="edge">
+<title>N0-&gt;N1</title>
+<path fill="none" stroke="#000000" d="M75.4126,-248.623C51.3761,-236.8122 25.1746,-219.0687 11.4395,-194.0568 -2.9365,-167.8777 -4.4393,-152.1527 11.4395,-126.8568 30.5345,-96.4375 66.4037,-78.4881 98.2852,-68.0681"/>
+<polygon fill="#000000" stroke="#000000" points="99.4998,-71.3564 108.0285,-65.0706 97.4414,-64.6659 99.4998,-71.3564"/>
+<text text-anchor="middle" x="116.5298" y="-181.4568" font-family="Times,serif" font-size="14.00" fill="#000000">rdt_send(data)</text>
+<text text-anchor="middle" x="116.5298" y="-164.6568" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;</text>
+<text text-anchor="middle" x="116.5298" y="-147.8568" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;snkpkt=make_pkt(data, checksum)</text>
+<text text-anchor="middle" x="116.5298" y="-131.0568" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;udt_send(snkpkt)</text>
+</g>
+<!-- N1&#45;&gt;N0 -->
+<g id="edge3" class="edge">
+<title>N1-&gt;N0</title>
+<path fill="none" stroke="#000000" d="M200.9939,-92.2489C209.362,-102.5943 217.0153,-114.4141 221.4997,-126.8568 231.6261,-154.9544 234.56,-167.197 221.4997,-194.0568 213.3849,-210.7458 199.4669,-224.7824 184.791,-235.9828"/>
+<polygon fill="#000000" stroke="#000000" points="182.6439,-233.2162 176.5918,-241.9123 186.7459,-238.8884 182.6439,-233.2162"/>
+<text text-anchor="middle" x="292.1263" y="-164.6568" font-family="Times,serif" font-size="14.00" fill="#000000">rdt_rcv(rcvpkt)</text>
+<text text-anchor="middle" x="292.1263" y="-147.8568" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&amp;&amp; isACK(rcvpkt)</text>
+</g>
+<!-- N1&#45;&gt;N1 -->
+<g id="edge2" class="edge">
+<title>N1-&gt;N1</title>
+<path fill="none" stroke="#000000" d="M212.5987,-73.9528C224.8503,-72.4268 233.9281,-65.9186 233.9281,-54.4284 233.9281,-46.3493 229.4402,-40.7333 222.5166,-37.5804"/>
+<polygon fill="#000000" stroke="#000000" points="223.1652,-34.1303 212.5987,-34.904 221.3414,-40.8886 223.1652,-34.1303"/>
+<text text-anchor="middle" x="295.9397" y="-75.4284" font-family="Times,serif" font-size="14.00" fill="#000000">rdt_rcv(rcvpkt)</text>
+<text text-anchor="middle" x="295.9397" y="-58.6284" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&amp;&amp; isNAK(rcvpkt)</text>
+<text text-anchor="middle" x="295.9397" y="-41.8284" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;</text>
+<text text-anchor="middle" x="295.9397" y="-25.0284" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;udt_send(snkpkt)</text>
+</g>
+<!-- N2 -->
+<g id="node3" class="node">
+<title>N2</title>
+<ellipse fill="none" stroke="#000000" cx="462.4997" cy="-267.8642" rx="55.6155" ry="55.6155"/>
+<text text-anchor="middle" x="462.4997" y="-280.4642" font-family="Times,serif" font-size="14.00" fill="#000000">wait for</text>
+<text text-anchor="middle" x="462.4997" y="-263.6642" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;calling </text>
+<text text-anchor="middle" x="462.4997" y="-246.8642" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;from below</text>
+</g>
+<!-- N2&#45;&gt;N2 -->
+<g id="edge4" class="edge">
+<title>N2-&gt;N2</title>
+<path fill="none" stroke="#000000" d="M518.1822,-274.4698C528.7991,-273.6794 536.3071,-271.4775 536.3071,-267.8642 536.3071,-265.5495 533.2258,-263.814 528.2198,-262.6577"/>
+<polygon fill="#000000" stroke="#000000" points="528.5696,-259.1727 518.1822,-261.2587 527.6032,-266.1057 528.5696,-259.1727"/>
+<text text-anchor="middle" x="598.7044" y="-288.8642" font-family="Times,serif" font-size="14.00" fill="#000000">rdt_rcv(rcvpkt)</text>
+<text text-anchor="middle" x="598.7044" y="-272.0642" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&amp;&amp; corrupt(rcvpkt)</text>
+<text text-anchor="middle" x="598.7044" y="-255.2642" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;</text>
+<text text-anchor="middle" x="598.7044" y="-238.4642" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;udt_send(NAK)</text>
+</g>
+<!-- N2&#45;&gt;N2 -->
+<g id="edge6" class="edge">
+<title>N2-&gt;N2</title>
+<path fill="none" stroke="#000000" d="M517.5936,-279.4051C577.5833,-284.7551 661.1017,-280.9082 661.1017,-267.8642 661.1017,-255.5336 586.4683,-251.4216 527.6293,-255.5282"/>
+<polygon fill="#000000" stroke="#000000" points="527.2859,-252.0443 517.5936,-256.3234 527.8389,-259.0225 527.2859,-252.0443"/>
+<text text-anchor="middle" x="732.4443" y="-305.6642" font-family="Times,serif" font-size="14.00" fill="#000000">rdt_rcv(rcvpkt)</text>
+<text text-anchor="middle" x="732.4443" y="-288.8642" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&amp;&amp; notcorrupt(rcvpkt)</text>
+<text text-anchor="middle" x="732.4443" y="-272.0642" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;</text>
+<text text-anchor="middle" x="732.4443" y="-255.2642" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;extract(rcvpkt, data)</text>
+<text text-anchor="middle" x="732.4443" y="-238.4642" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;deliver_data(data)</text>
+<text text-anchor="middle" x="732.4443" y="-221.6642" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;udt_send(ACK)</text>
+</g>
+<!-- N100 -->
+<!-- N2&#45;&gt;N100 -->
+<!-- N98 -->
+<!-- N98&#45;&gt;N2 -->
+<g id="edge8" class="edge">
+<title>N98-&gt;N2</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M462.4997,-360.3741C462.4997,-352.8921 462.4997,-343.7392 462.4997,-334.1327"/>
+<polygon fill="#000000" stroke="#000000" points="465.9998,-334.0085 462.4997,-324.0085 458.9998,-334.0085 465.9998,-334.0085"/>
+</g>
+<!-- N99 -->
+<!-- N99&#45;&gt;N0 -->
+<g id="edge7" class="edge">
+<title>N99-&gt;N0</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M127.4997,-360.3741C127.4997,-352.8008 127.4997,-343.5157 127.4997,-333.781"/>
+<polygon fill="#000000" stroke="#000000" points="130.9998,-333.5266 127.4997,-323.5266 123.9998,-333.5267 130.9998,-333.5266"/>
+</g>
+</g>
+</svg>
+</p><h4 class="mume-header" id="rdt-21">RDT 2.1</h4>
+
+<p>&#x505C;-&#x7B49;&#x534F;&#x8BAE;&#x7684;&#x7F3A;&#x9677;&#x53CA;&#x5E94;&#x5BF9;&#x7B56;&#x7565;&#xFF1A;</p>
+<ul>
+<li>ACK / NAK &#x5728;&#x4F20;&#x8F93;&#x8FC7;&#x7A0B;&#x4E2D;&#x53EF;&#x80FD;&#x51FA;&#x9519;<br>
+&#x2460;&#x4E3A; ACK / NAK &#x589E;&#x52A0;&#x68C0;&#x9519;&#x53CA;&#x7EA0;&#x9519;&#x673A;&#x5236;<br>
+&#x2461;&#x589E;&#x52A0;&#x989D;&#x5916;&#x7684;&#x63A7;&#x5236;&#x6D88;&#x606F;&#xFF0C;&#x7136;&#x800C;&#x63A7;&#x5236;&#x6D88;&#x606F;&#x4E5F;&#x53EF;&#x80FD;&#x51FA;&#x9519;</li>
+<li>&#x82E5; ACK / NAK &#x51FA;&#x9519;&#xFF0C;&#x53D1;&#x9001;&#x65B9;&#x76F4;&#x63A5;&#x91CD;&#x4F20;<br>
+&#x5F15;&#x5165;&#x5E8F;&#x5217;&#x53F7;&#x673A;&#x5236;&#x907F;&#x514D;&#x91CD;&#x590D;&#x5206;&#x7EC4;&#xFF0C;&#x63A5;&#x6536;&#x65B9;&#x6839;&#x636E;&#x5206;&#x7EC4;&#x7684;&#x5E8F;&#x5217;&#x53F7;&#x4E22;&#x5F03;&#x91CD;&#x590D;&#x5206;&#x7EC4;</li>
+</ul>
+<p engine="dot"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: RDT_2_1 Pages: 1 -->
+<svg width="421pt" height="677pt" viewBox="0.00 0.00 504.94 812.53" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(.8333 .8333) rotate(0) translate(4 808.5298)">
+<title>RDT_2_1</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-808.5298 500.9392,-808.5298 500.9392,4 -4,4"/>
+<!-- S0 -->
+<g id="node1" class="node">
+<title>S0</title>
+<ellipse fill="none" stroke="#000000" cx="174.254" cy="-676.2757" rx="55.0092" ry="55.0092"/>
+<text text-anchor="middle" x="174.254" y="-688.8757" font-family="Times,serif" font-size="14.00" fill="#000000">wait for</text>
+<text text-anchor="middle" x="174.254" y="-672.0757" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;calling 0</text>
+<text text-anchor="middle" x="174.254" y="-655.2757" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;from above</text>
+</g>
+<!-- W0 -->
+<g id="node2" class="node">
+<title>W0</title>
+<ellipse fill="none" stroke="#000000" cx="55.254" cy="-463.3933" rx="54.3569" ry="54.3569"/>
+<text text-anchor="middle" x="55.254" y="-467.5933" font-family="Times,serif" font-size="14.00" fill="#000000">wait for ACK</text>
+<text text-anchor="middle" x="55.254" y="-450.7933" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;or NAK 0</text>
+</g>
+<!-- S0&#45;&gt;W0 -->
+<g id="edge1" class="edge">
+<title>S0-&gt;W0</title>
+<path fill="none" stroke="#000000" d="M121.9908,-657.7408C97.4017,-646.0895 70.4111,-628.3738 56.1938,-603.0217 43.4797,-580.35 41.2514,-552.1743 42.9554,-527.0829"/>
+<polygon fill="#000000" stroke="#000000" points="46.4604,-527.1823 43.8666,-516.9099 39.4883,-526.5578 46.4604,-527.1823"/>
+<text text-anchor="middle" x="168.2841" y="-590.4217" font-family="Times,serif" font-size="14.00" fill="#000000">rdt_send(data)</text>
+<text text-anchor="middle" x="168.2841" y="-573.6217" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;</text>
+<text text-anchor="middle" x="168.2841" y="-556.8217" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;snkpkt=make_pkt(0, data, checksum)</text>
+<text text-anchor="middle" x="168.2841" y="-540.0217" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;udt_send(snkpkt)</text>
+</g>
+<!-- W0&#45;&gt;W0 -->
+<g id="edge5" class="edge">
+<title>W0-&gt;W0</title>
+<path fill="none" stroke="#000000" d="M107.0121,-480.9967C118.9288,-479.4798 127.6824,-473.6121 127.6824,-463.3933 127.6824,-456.3679 123.545,-451.399 117.0867,-448.4866"/>
+<polygon fill="#000000" stroke="#000000" points="117.5771,-444.9947 107.0121,-445.7899 115.767,-451.7567 117.5771,-444.9947"/>
+<text text-anchor="middle" x="192.41" y="-492.7933" font-family="Times,serif" font-size="14.00" fill="#000000">rdt_rcv(rcvpkt)</text>
+<text text-anchor="middle" x="192.41" y="-475.9933" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&amp;&amp; (corrupt(rcvpkt)</text>
+<text text-anchor="middle" x="192.41" y="-459.1933" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;|| isNAK(rcvpkt))</text>
+<text text-anchor="middle" x="192.41" y="-442.3933" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;</text>
+<text text-anchor="middle" x="192.41" y="-425.5933" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;udt_send(snkpkt)</text>
+</g>
+<!-- S1 -->
+<g id="node3" class="node">
+<title>S1</title>
+<ellipse fill="none" stroke="#000000" cx="55.254" cy="-267.3109" rx="55.0092" ry="55.0092"/>
+<text text-anchor="middle" x="55.254" y="-279.9109" font-family="Times,serif" font-size="14.00" fill="#000000">wait for</text>
+<text text-anchor="middle" x="55.254" y="-263.1109" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;calling 1</text>
+<text text-anchor="middle" x="55.254" y="-246.3109" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;from above</text>
+</g>
+<!-- W0&#45;&gt;S1 -->
+<g id="edge2" class="edge">
+<title>W0-&gt;S1</title>
+<path fill="none" stroke="#000000" d="M55.254,-408.7734C55.254,-385.169 55.254,-357.3565 55.254,-332.6669"/>
+<polygon fill="#000000" stroke="#000000" points="58.7541,-332.6588 55.254,-322.6588 51.7541,-332.6588 58.7541,-332.6588"/>
+<text text-anchor="middle" x="126.5966" y="-378.3649" font-family="Times,serif" font-size="14.00" fill="#000000">rdt_rcv(rcvpkt)</text>
+<text text-anchor="middle" x="126.5966" y="-361.5649" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&amp;&amp; notcorrupt(rcvpkt)</text>
+<text text-anchor="middle" x="126.5966" y="-344.7649" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&amp;&amp; isACK(rcvpkt)</text>
+</g>
+<!-- W1 -->
+<g id="node4" class="node">
+<title>W1</title>
+<ellipse fill="none" stroke="#000000" cx="174.254" cy="-54.4284" rx="54.3569" ry="54.3569"/>
+<text text-anchor="middle" x="174.254" y="-58.6284" font-family="Times,serif" font-size="14.00" fill="#000000">wait for ACK</text>
+<text text-anchor="middle" x="174.254" y="-41.8284" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;or NAK 1</text>
+</g>
+<!-- S1&#45;&gt;W1 -->
+<g id="edge3" class="edge">
+<title>S1-&gt;W1</title>
+<path fill="none" stroke="#000000" d="M43.7052,-213.1085C40.6862,-185.6102 41.6371,-152.6619 56.1938,-126.8568 68.8101,-104.4915 91.4438,-88.1822 113.5424,-76.7682"/>
+<polygon fill="#000000" stroke="#000000" points="115.1751,-79.8659 122.6184,-72.3262 112.0979,-73.5785 115.1751,-79.8659"/>
+<text text-anchor="middle" x="168.2841" y="-181.4568" font-family="Times,serif" font-size="14.00" fill="#000000">rdt_send(data)</text>
+<text text-anchor="middle" x="168.2841" y="-164.6568" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;</text>
+<text text-anchor="middle" x="168.2841" y="-147.8568" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;snkpkt=make_pkt(1, data, checksum)</text>
+<text text-anchor="middle" x="168.2841" y="-131.0568" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;udt_send(snkpkt)</text>
+</g>
+<!-- W1&#45;&gt;S0 -->
+<g id="edge4" class="edge">
+<title>W1-&gt;S0</title>
+<path fill="none" stroke="#000000" d="M224.6886,-75.665C245.8793,-87.4184 268.3407,-104.2878 280.254,-126.8568 379.0459,-314.0117 378.5505,-415.6062 280.254,-603.0217 270.1196,-622.3445 252.3198,-637.5771 234.167,-649.0313"/>
+<polygon fill="#000000" stroke="#000000" points="232.0496,-646.2192 225.2594,-654.3522 235.6393,-652.2288 232.0496,-646.2192"/>
+<text text-anchor="middle" x="425.5966" y="-378.3649" font-family="Times,serif" font-size="14.00" fill="#000000">rdt_rcv(rcvpkt)</text>
+<text text-anchor="middle" x="425.5966" y="-361.5649" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&amp;&amp; notcorrupt(rcvpkt)</text>
+<text text-anchor="middle" x="425.5966" y="-344.7649" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&amp;&amp; isACK(rcvpkt)</text>
+</g>
+<!-- W1&#45;&gt;W1 -->
+<g id="edge6" class="edge">
+<title>W1-&gt;W1</title>
+<path fill="none" stroke="#000000" d="M225.353,-73.9528C237.6046,-72.4268 246.6824,-65.9186 246.6824,-54.4284 246.6824,-46.3493 242.1945,-40.7333 235.2709,-37.5804"/>
+<polygon fill="#000000" stroke="#000000" points="235.9196,-34.1303 225.353,-34.904 234.0957,-40.8886 235.9196,-34.1303"/>
+<text text-anchor="middle" x="311.41" y="-83.8284" font-family="Times,serif" font-size="14.00" fill="#000000">rdt_rcv(rcvpkt)</text>
+<text text-anchor="middle" x="311.41" y="-67.0284" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&amp;&amp; (corrupt(rcvpkt)</text>
+<text text-anchor="middle" x="311.41" y="-50.2284" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;|| isNAK(rcvpkt))</text>
+<text text-anchor="middle" x="311.41" y="-33.4284" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;&#x2014;</text>
+<text text-anchor="middle" x="311.41" y="-16.6284" font-family="Times,serif" font-size="14.00" fill="#000000"> &#xA0;&#xA0;&#xA0;udt_send(snkpkt)</text>
+</g>
+<!-- N -->
+<!-- N&#45;&gt;S0 -->
+<g id="edge7" class="edge">
+<title>N-&gt;S0</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M174.254,-768.3236C174.254,-760.7881 174.254,-751.5494 174.254,-741.8633"/>
+<polygon fill="#000000" stroke="#000000" points="177.7541,-741.6601 174.254,-731.6602 170.7541,-741.6602 177.7541,-741.6601"/>
+</g>
+</g>
+</svg>
+</p><pre data-role="codeBlock" data-info class="language-"><code></code></pre><h4 class="mume-header" id="rdt-22">RDT 2.2</h4>
+
+<p>&#x4F7F;&#x7528;<code>ACK</code>&#x643A;&#x5E26;&#x786E;&#x8BA4;&#x5E8F;&#x5217;&#x53F7;&#x6765;&#x4EE3;&#x66FF;<code>NAK</code><br>
+&#x63A5;&#x6536;&#x65B9;&#x6BCF;&#x6B21;&#x6536;&#x5230;&#x5206;&#x7EC4;&#xFF0C;&#x5C31;&#x8FD4;&#x56DE;&#x643A;&#x5E26;&#x5DF2;&#x786E;&#x8BA4;&#x7684;&#x5206;&#x7EC4;&#x5E8F;&#x53F7;&#x7684;<code>ACK</code></p>
+<pre data-role="codeBlock" data-info="dot engine={&quot;dot&quot;}" class="language-dot engine={&quot;dot&quot;}"><code></code></pre><h4 class="mume-header" id="rdt-30">RDT 3.0</h4>
+
+<p>&#x5047;&#x8BBE;&#x4FE1;&#x9053;&#x65E2;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x9519;&#x8BEF;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x4E22;&#x5931;&#x5206;&#x7EC4;<br>
+&#x663E;&#x7136;&#xFF0C;RDT 2.x &#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#xFF0C;&#x5206;&#x7EC4;&#x4E22;&#x5931;&#x540E;&#xFF0C;&#x53D1;&#x9001;&#x65B9;&#x4E0E;&#x63A5;&#x6536;&#x65B9;&#x90FD;&#x4F1A;&#x9677;&#x5165;&#x65E0;&#x9650;&#x7B49;&#x5F85;&#x7684;&#x72B6;&#x6001;<br>
+&#x53D1;&#x9001;&#x65B9;&#x7B49;&#x5F85;&#x786E;&#x8BA4;&#xFF0C;&#x63A5;&#x6536;&#x65B9;&#x7B49;&#x5F85;&#x5206;&#x7EC4;&#x624D;&#x80FD;&#x53D1;&#x9001;&#x786E;&#x8BA4;&#xFF0C;&#x5F62;&#x6210;&#x4E00;&#x79CD;&#x201C;&#x6B7B;&#x9501;&#x201D;&#x5C40;&#x9762;</p>
+<p>&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x9700;&#x8981;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#x6253;&#x7834;&#x8FD9;&#x4E2A;&#x5C40;&#x9762;&#xFF1A;&#x53D1;&#x9001;&#x65B9;&#x4E3B;&#x52A8;&#x53D1;&#x9001;&#x5206;&#x7EC4;<br>
+&#x5373;&#xFF0C;&#x5728;<strong>&#x5408;&#x7406;</strong>&#x7684;&#x65F6;&#x95F4;&#x5185;&#xFF08;&#x5F15;&#x5165;&#x8BA1;&#x65F6;&#x5668;&#xFF09;&#xFF0C;&#x53D1;&#x9001;&#x65B9;&#x82E5;&#x672A;&#x6536;&#x5230; ACK&#xFF0C;&#x91CD;&#x4F20;&#xFF08;<strong>&#x8D85;&#x65F6;&#x91CD;&#x4F20;</strong>&#xFF09;&#x3002;</p>
+<p>&#x540C;&#x6837;&#xFF0C;&#x4F7F;&#x7528;&#x5E8F;&#x5217;&#x53F7;&#x673A;&#x5236;&#x5904;&#x7406;&#x91CD;&#x590D;&#x5206;&#x7EC4;&#x3002;</p>
+<pre data-role="codeBlock" data-info="dot engine={&quot;dot&quot;}" class="language-dot engine={&quot;dot&quot;}"><code></code></pre><p>RDT 3.0 &#x867D;&#x7136;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#xFF0C;&#x4ECD;&#x7136;&#x662F;&#x4E00;&#x79CD;&#x505C;-&#x7B49;&#x534F;&#x8BAE;&#xFF0C;&#x6027;&#x80FD;&#x5F88;&#x5DEE;&#x3002;<br>
+<img src="https://cdn.jsdelivr.net/gh/kafmws/pictures/notes/RDT_3_0_&#x505C;-&#x7B49;&#x64CD;&#x4F5C;&#x793A;&#x610F;&#x56FE;.png" alt="RDT_3_0_&#x505C;-&#x7B49;&#x64CD;&#x4F5C;&#x793A;&#x610F;&#x56FE;" width="60%"><br>
+&#x5982;&#x4E0A;&#x56FE;&#x6240;&#x793A;&#x6D41;&#x7A0B;&#xFF0C;&#x5047;&#x8BBE;&#x94FE;&#x8DEF;&#x5E26;&#x5BBD; R = 1Gbps&#xFF0C;&#x7AEF;&#x5230;&#x7AEF;&#x4F20;&#x8F93;&#x65F6;&#x5EF6; 15 ms&#xFF0C;&#x5206;&#x7EC4;&#x5927;&#x5C0F; L = 1KB<br>
+&#x5219;&#x53D1;&#x9001;&#x65F6;&#x5EF6;&#x4E3A; T<sub>transmit</sub> = L / R = 8KB / 10<sup>9</sup> bps = 8 ms<br>
+&#x53D1;&#x9001;&#x65B9;&#x4FE1;&#x9053;&#x5229;&#x7528;&#x7387;&#x4E3A; U<sub>sender</sub> = T<sub>transmit</sub> / (RTT + T<sub>transmit</sub>) &#x2248; 0.00027 &#xFF08;&#x5FFD;&#x7565; ACK &#x53D1;&#x9001;&#x65F6;&#x5EF6;&#xFF09;<br>
+&#x53D1;&#x9001;&#x65B9;&#x6BCF; 30ms &#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x5206;&#x7EC4;&#xFF0C;1Gbps &#x7684;&#x94FE;&#x8DEF;&#x6700;&#x7EC8;&#x901F;&#x7387;&#x4E3A; 33KB/s</p>
+<p><strong>&#x7F51;&#x7EDC;&#x534F;&#x8BAE;&#x9650;&#x5236;&#x4E86;&#x7269;&#x7406;&#x8D44;&#x6E90;&#x7684;&#x5229;&#x7528;</strong></p>
+<h2 class="mume-header" id="%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E5%8D%8F%E8%AE%AE">&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x534F;&#x8BAE;</h2>
+
+<p>&#x4E0D;&#x96BE;&#x7406;&#x89E3;&#xFF0C;RDT 3.0 &#x7684;&#x6027;&#x80FD;&#x5C40;&#x9650;&#x57FA;&#x672C;&#x4E0A;&#x662F;&#x7531;&#x4E8E;&#x505C;-&#x7B49;&#x673A;&#x5236;&#xFF0C;&#x4F7F;&#x6570;&#x636E;&#x7684;&#x53D1;&#x9001;&#x65F6;&#x5EF6;&#x6269;&#x5927;&#x4E3A; RTT</p>
+<p>&#x5728;&#x4E0A;&#x4E00;&#x5E45;&#x65F6;&#x7A7A;&#x56FE;&#x4E2D;&#xFF0C;&#x660E;&#x663E;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x4FE1;&#x9053;&#x6709;&#x5F88;&#x5927;&#x95F2;&#x7F6E;&#xFF08;&#x767D;&#x8272;&#x533A;&#x57DF;&#xFF09;<br>
+&#x53EF;&#x4EE5;&#x91C7;&#x7528;<strong>&#x6D41;&#x6C34;&#x7EBF;&#x673A;&#x5236;</strong>&#x6269;&#x5927;&#x4FE1;&#x9053;&#x7684;&#x5229;&#x7528;&#x7387;<br>
+<img src="https://cdn.jsdelivr.net/gh/kafmws/pictures/notes/&#x6D41;&#x6C34;&#x7EBF;&#x53D1;&#x9001;&#x5206;&#x7EC4;.png" alt="&#x6D41;&#x6C34;&#x7EBF;&#x53D1;&#x9001;&#x5206;&#x7EC4;" width="60%"><br>
+&#x505C;-&#x7B49;&#x534F;&#x8BAE;&#x4E0E;&#x6D41;&#x6C34;&#x7EBF;&#x534F;&#x8BAE;&#x7684;&#x5BF9;&#x6BD4;&#xFF1A;<br>
+<img src="https://cdn.jsdelivr.net/gh/kafmws/pictures/notes/&#x505C;-&#x7B49;&#x534F;&#x8BAE;&#x4E0E;&#x6D41;&#x6C34;&#x7EBF;&#x534F;&#x8BAE;&#x7684;&#x5BF9;&#x6BD4;.png" alt="&#x505C;-&#x7B49;&#x534F;&#x8BAE;&#x4E0E;&#x6D41;&#x6C34;&#x7EBF;&#x534F;&#x8BAE;&#x7684;&#x5BF9;&#x6BD4;" width="60%"></p>
+<p>&#x57FA;&#x4E8E;&#x6D41;&#x6C34;&#x7EBF;&#x7684;&#x534F;&#x8BAE;&#xFF1A;&#x5141;&#x8BB8;&#x53D1;&#x9001;&#x65B9;&#x5728;&#x6536;&#x5230; ACK &#x524D;&#xFF0C;&#x8FDE;&#x7EED;&#x53D1;&#x9001;&#x591A;&#x4E2A;&#x5206;&#x7EC4;</p>
+<ul>
+<li>&#x66F4;&#x5927;&#x7684;&#x5E8F;&#x5217;&#x53F7;&#x8303;&#x56F4;</li>
+<li>&#x53D1;&#x9001;&#x65B9;&#x53CA;&#x63A5;&#x6536;&#x65B9;&#x9700;&#x8981;&#x66F4;&#x5927;&#x7684;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x4EE5;&#x7F13;&#x5B58;&#x5206;&#x7EC4;</li>
+</ul>
+<p>&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x793A;&#x610F;&#x56FE;</p>
+<p>&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x793A;&#x610F;&#x56FE;<br>
+&#x7A97;&#x53E3;&#xFF1A;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x7684;&#x5E8F;&#x5217;&#x53F7;&#x8303;&#x56F4;&#xFF0C;&#x7A97;&#x53E3;&#x5C3A;&#x5BF8;&#x4E3A; N&#xFF0C;&#x6700;&#x591A;&#x6709; N &#x4E2A;&#x7B49;&#x5F85;&#x786E;&#x8BA4;&#x7684;&#x6D88;&#x606F;</p>
+<h4 class="mume-header" id="gbn-protocolgo-back-n-protocol">GBN Protocol&#xFF0C;Go-Back-N Protocol</h4>
+
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
