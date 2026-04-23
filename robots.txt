@@ -1,0 +1,41 @@
+# robots.txt
+
+# ========== 1. 全局规则：允许所有主流搜索引擎爬虫 ==========
+User-agent: *
+Allow: /
+
+# ========== 2. 针对 AI / LLM 爬虫的精细控制 ==========
+# Google-Extended: Google 的独立 AI 爬虫（用于 Bard、Vertex AI 等）
+User-agent: Google-Extended
+Allow: /
+# 如果你不希望 Google AI 使用你的内容，可以改为 Disallow: /
+
+# GPTBot (OpenAI)
+User-agent: GPTBot
+Allow: /
+# 如需完全禁止，改为 Disallow: /
+
+# ChatGPT-User (OpenAI 的模拟用户代理，用于特定任务)
+User-agent: ChatGPT-User
+Disallow: /
+
+# Anthropic AI (Claude)
+User-agent: Anthropic-AI
+Allow: /
+# 如需禁止：Disallow: /
+
+# Common Crawl (很多 LLM 的数据源)
+User-agent: CCBot
+Allow: /
+# 如需禁止：Disallow: /
+
+# 其他常见 AI 爬虫 (可根据需要启用)
+User-agent: Applebot-Extended
+Allow: /
+# Apple 的 AI 爬虫，用于 Apple Intelligence 等
+
+User-agent: Omgili
+Allow: /
+# Omgili 是一个论坛爬虫，常被用于训练，建议默认禁止
+
+Sitemap: https://kafm.eu.org/sitemap.xml
